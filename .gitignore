@@ -1,0 +1,21 @@
+# Virtual Environment
+venv/
+__pycache__/
+
+# Local Database
+database.db
+
+# IDE settings
+.vscode/
+
+# --- CRITICAL: IGNORE MODELS AND DATA ---
+my-fine-tuned-model/
+BBC News Summary/
+
+# --- Other files to ignore ---
+*.pptx
+*.csv
+*.html
+*.png
+filename
+requirement.txt

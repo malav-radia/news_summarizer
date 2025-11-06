@@ -1,0 +1,339 @@
+/* === QuickRead News Summarizer - Final Stylesheet === */
+
+
+/* --- 1. Global Styles --- */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+header {
+    background: #0b1c38;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    border-bottom: 4px solid #00b1cd;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.main-nav {
+    text-align: center;
+    margin-bottom: 20px;
+    /* Moves history link away from title */
+}
+
+.main-nav a {
+    color: #00b1cd;
+    /* Brighter link color */
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.main-nav a:hover {
+    background-color: #1a2947;
+}
+
+.loading-message {
+    color: #777;
+    font-style: italic;
+    text-align: center;
+}
+
+
+/* --- 2. Mode Selector (Startup Page) --- */
+
+#startup-choice {
+    text-align: center;
+    /* This mode does NOT have a white box */
+}
+
+#mode-selector {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.mode-btn {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 20px 30px;
+    border: 2px solid #007bff;
+    background-color: #f0f8ff;
+    color: #007bff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.mode-btn:hover {
+    background-color: #007bff;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* --- 3. Online & OCR Mode Containers (The White Boxes) --- */
+
+#online-mode,
+#ocr-mode {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Container for TOI / GNews buttons */
+
+#publisher-selector {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+/* Restyled buttons for white background */
+
+.publisher-btn {
+    padding: 10px 15px;
+    margin: 0 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid #007bff;
+    /* Blue border */
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f0f8ff;
+    /* Light blue */
+    color: #007bff;
+    /* Blue text */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    opacity: 1 !important;
+    /* Fixes faded bug */
+}
+
+.publisher-btn:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+
+/* --- 4. Online Mode (Article Content) --- */
+
+#headlines-container,
+#article-container,
+#summary-container {
+    background: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    /* Use margin-top to separate boxes */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Fixes the overlapping text bug */
+
+#headlines-container h2 {
+    display: block;
+    width: 100%;
+}
+
+.headline-list {
+    list-style: none;
+    padding: 0;
+}
+
+.headline-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.headline-list li a {
+    text-decoration: none;
+    color: #0056b3;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.headline-list li a:hover {
+    color: #00b1cd;
+    text-decoration: underline;
+}
+
+.article-content h2,
+.summary-content h2 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.category-tag {
+    font-style: italic;
+    color: #555;
+    background-color: #f4f4f4;
+    padding: 3px 8px;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 0.9em;
+}
+
+#summarize-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #d9534f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#summarize-btn:hover {
+    background-color: #c9302c;
+}
+
+
+/* --- 5. OCR "Human-in-the-Loop" Styles --- */
+
+#ocr-interface {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#ocr-interface input[type="file"] {
+    font-size: 1em;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+}
+
+#ocr-image-container {
+    position: relative;
+    /* This is essential for placing the lines */
+    border: 2px dashed #ccc;
+    background-color: #fafafa;
+    min-height: 100px;
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+}
+
+#ocr-image-container img {
+    max-width: 100%;
+    height: auto;
+    cursor: crosshair;
+}
+
+#ocr-instructions {
+    font-size: 1.1em;
+    color: #333;
+    font-weight: bold;
+}
+
+#ocr-button-container {
+    display: flex;
+    gap: 10px;
+}
+
+
+/* Style for the vertical lines the user adds */
+
+.gap-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: rgba(255, 0, 0, 0.7);
+    /* Bright red */
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    box-shadow: 0 0 5px black;
+}
+
+
+/* Submit and Reset Buttons */
+
+.submit-btn {
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #28a745;
+    /* Green */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+
+.reset-btn {
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #dc3545;
+    /* Red */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.reset-btn:hover {
+    background-color: #c82333;
+}
+
+
+/* --- 6. History Page Styles --- */
+
+#history-container {
+    width: 100%;
+}
+
+.history-item {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.history-meta {
+    font-size: 0.9em;
+    color: #555;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
