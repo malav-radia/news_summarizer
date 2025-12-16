@@ -42,8 +42,8 @@ Database: SQLite
 Follow these steps to set up and run QuickRead locally.
 
 ### Step 1: Clone the Repository
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git  
-cd YOUR_REPO_NAME  
+git clone https://github.com/malav-radia/news_summarizer.git  
+cd news_summarizer  
 
 ---
 
